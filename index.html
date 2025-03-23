@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inclusion et Diversité en France</title>
+    <style>
+        :root {
+            --primary-blue: #1a73e8;
+            --light-blue: #e8f0fe;
+            --dark-blue: #0d47a1;
+            --white: #ffffff;
+            --light-gray: #f5f5f5;
+            --text-color: #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--white);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: var(--white);
+            padding: 1.5rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+        
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 0.5rem;
+        }
+        
+        .nav-links a:hover {
+            color: var(--light-blue);
+        }
+        
+        .hero {
+            background: url('image/download.jpg') center/cover;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            color: var(--white);
+            text-align: center;
+            width: 100%;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: var(--dark-blue);
+        }
+        
+        .chapters {
+            padding: 4rem 0;
+            background-color: var(--light-gray);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--dark-blue);
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .chapter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .chapter-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .chapter-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .chapter-img {
+            height: 180px;
+            background-color: var(--light-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .chapter-img img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        .chapter-content {
+            padding: 1.5rem;
+        }
+        
+        .chapter-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+        }
+        
+        .chapter-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .about {
+            padding: 4rem 0;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark-blue);
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-img {
+            flex: 1;
+            height: 400px;
+            background-color: var(--light-blue);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        footer {
+            background: var(--dark-blue);
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-text {
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-links a {
+            color: var(--light-blue);
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">Inclusion & Diversité</a>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Accueil</a></li>
+                    <li><a href="emploie/emploi_1.html">Accès a l'emploi</a></li>
+                    <li><a href="recherche_de_logement/logement_1.html">Recherche de Logement</a></li>
+                    <li><a href="santé/santé_1.html">Accès aux services de santé</a></li>
+                    <li><a href="système_judiciaire/système_judiciaire_1.html">Système judiciaire</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Pour une France plus inclusive</h1>
+            <p>Un projet citoyen qui explore les défis auxquels sont confrontées les personnes noires en France dans quatre domaines essentiels : le système judiciaire, le logement, la santé et l'emploi.</p>
+            <a href="#chapters" class="btn">Explorer les chapitres</a>
+        </div>
+    </section>
+
+    <section class="chapters" id="chapters">
+        <div class="container">
+            <div class="section-title">
+                <h2>Les 4 chapitres</h2>
+                <p>Découvrez nos recherches sur les inégalités et les discriminations systémiques dans quatre domaines fondamentaux de la vie quotidienne.</p>
+            </div>
+            <div class="chapter-grid">
+                <div class="chapter-card">
+                    <div class="chapter-img">
+                        <img src="image/emploi.png" alt="Emploi">
+                    </div>
+                    <div class="chapter-content">
+                        <h3>Emploi</h3>
+                        <p>Examen des discriminations à l'embauche, des écarts de salaire et du plafond de verre dans le monde professionnel.</p>
+                        <a href="emploie/emploi_1.html" class="btn">Découvrir</a>
+                    </div>
+                </div>
+                <div class="chapter-card">
+                    <div class="chapter-img">
+                        <img src="image/logement.png" alt="Logement">
+                    </div>
+                    <div class="chapter-content">
+                        <h3>Recherche de Logement</h3>
+                        <p>Analyse des discriminations dans l'accès au logement et de la ségrégation spatiale dans les villes françaises.</p>
+                        <a href="recherche_de_logement/logement_1.html" class="btn">Découvrir</a>
+                    </div>
+                </div>
+                <div class="chapter-card">
+                    <div class="chapter-img">
+                        <img src="image/sante.png" alt="Santé">
+                    </div>
+                    <div class="chapter-content">
+                        <h3>Santé</h3>
+                        <p>Étude des inégalités dans l'accès aux soins et des biais médicaux affectant les personnes noires.</p>
+                        <a href="santé/santé_1.html" class="btn">Découvrir</a>
+                    </div>
+                </div>
+                <div class="chapter-card">
+                    <div class="chapter-img">
+                        <img src="image/justice.png" alt="Justice">
+                    </div>
+                    <div class="chapter-content">
+                        <h3>Système Judiciaire</h3>
+                        <p>Exploration des biais dans les interpellations, les condamnations et le système carcéral français.</p>
+                        <a href="système_judiciaire/système_judiciaire_1.html" class="btn">Découvrir</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>À propos du projet</h2>
+                    <p>Ce projet citoyen a été réalisé dans le cadre du BTS SIO SISR. Il vise à sensibiliser sur les réalités des discriminations raciales en France et à proposer des pistes de réflexion pour une société plus inclusive.</p>
+                    <p>Pour chaque thématique, nous avons rassemblé des données, des témoignages et des analyses qui mettent en lumière les défis systémiques auxquels sont confrontées les personnes noires en France.</p>
+                    <p>Notre objectif est de susciter une prise de conscience et d'encourager le dialogue sur ces questions essentielles.</p>
+                </div>
+                <div class="about-img">
+                    <img src="image/dis.jpeg" alt="À propos du projet">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-text">
+                <p>© 2025 Projet Citoyen - Inclusion et Diversité. Tous droits réservés.</p>
+                <p>BTS SIO SISR - Projet étudiant</p>
+            </div>
+            <div class="footer-links">
+                <a href="#">Contact</a>
+                <a href="#">Mentions légales</a>
+                <a href="#">Sources</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
